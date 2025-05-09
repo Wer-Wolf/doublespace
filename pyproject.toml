@@ -1,0 +1,49 @@
+[project]
+name = "doublespace"
+version = "0.0.1"
+description = "Python extension for doublespace decompression"
+license = "GPL-2.0-or-later"
+requires-python = ">=3.12"
+keywords = [
+    "Compression",
+    "Doublespace",
+    "libdeds"
+]
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Environment :: Other Environment",
+    "Intended Audience :: Developers",
+    "Operating System :: POSIX",
+    "Programming Language :: C",
+    "Topic :: System :: Archiving :: Compression",
+    "Topic :: Software Development :: Libraries"
+]
+
+[project.readme]
+file = "README.md"
+content-type = "text/markdown"
+
+[[project.authors]]
+name = "Armin Wolf"
+email = "W_Armin@gmx.de"
+
+[project.urls]
+Repository = "https://github.com/Wer-Wolf/doublespace"
+Bugtracker = "https://github.com/Wer-Wolf/doublespace/issues"
+
+[build-system]
+requires = ["meson-python"]
+build-backend = "mesonpy"
+
+[tool.meson-python]
+limited-api = true
+
+[tool.meson-python.args]
+setup = ["--default-library=static"]
+install = ["--skip-subprojects"]
+
+[tool.hatch.envs.hatch-test]
+installer = "pip"
+
+[[tool.hatch.envs.hatch-test.matrix]]
+python = ["3.12", "3.13"]
