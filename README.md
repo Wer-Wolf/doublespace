@@ -16,6 +16,12 @@ support C extensions.
 python3 -m pip install doublespace
 ```
 
+## Building
+
+You can build this extension using the standard ``hatch build`` command. Please ensure that
+you have the ``ninja`` build system installed on your local system or else the build might
+fail. You can also use the standard ``hatch test`` command to execute the unit tests.
+
 ## Example
 
 This example uses the ``decompress`` function to perform doublespace decompression.
