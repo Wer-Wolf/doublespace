@@ -48,6 +48,9 @@ installer = "pip"
 [[tool.hatch.envs.hatch-test.matrix]]
 python = ["3.12", "3.13"]
 
+[tool.hatch.build.targets.sdist]
+exclude = ["/.github"]
+
 [tool.cibuildwheel]
 # musllinux builds are not supported for now as there exists no way
 # for modifying the before-all option depeneding on the image used.
