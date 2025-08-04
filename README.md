@@ -1,7 +1,7 @@
 # doublespace
 
 [![Hatch project](https://img.shields.io/badge/%F0%9F%A5%9A-Hatch-4051b5.svg)](https://github.com/pypa/hatch)
-![Tests](https://github.com/Wer-Wolf/doublespace/actions/workflows/Test.yaml/badge.svg)
+![Tests](https://github.com/Wer-Wolf/doublespace/actions/workflows/test.yml/badge.svg)
 
 Python C extension for doublespace decompression, based on the [libdeds](https://github.com/Wer-Wolf/libdeds) library.
 

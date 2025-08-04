@@ -1,0 +1,27 @@
+name: Tests
+
+on: [push, workflow_dispatch]
+
+jobs:
+  Test:
+    runs-on: [ubuntu-latest, ubuntu-24.04-arm]
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: |
+          3.12
+          3.13
+
+    - name: Install Hatch
+      run: python -m pip install hatch
+
+    - name: Install Ninja
+      run: sudo apt install -y ninja-build
+
+    - name: Run tests
+      run: hatch test --all
