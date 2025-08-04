@@ -4,7 +4,7 @@ project(
     default_options: ['python.install_env=auto'],
     license: 'GPL-2.0-or-later',
     meson_version: '>=1.3.0',
-    version: '0.0.1',
+    version: '1.0.0',
 )
 
 py = import('python').find_installation('python3')
