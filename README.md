@@ -22,6 +22,9 @@ You can build this extension using the standard ``hatch build`` command. Please 
 you have the ``ninja`` build system installed on your local system or else the build might
 fail. You can also use the standard ``hatch test`` command to execute the unit tests.
 
+You can also use ``cibuildwheel`` for building this extension in a manner compatible with
+the python manylinux specification.
+
 ## Example
 
 This example uses the ``decompress`` function to perform doublespace decompression.

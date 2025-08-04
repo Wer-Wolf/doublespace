@@ -47,3 +47,31 @@ installer = "pip"
 
 [[tool.hatch.envs.hatch-test.matrix]]
 python = ["3.12", "3.13"]
+
+[tool.cibuildwheel]
+# musllinux builds are not supported for now as there exists no way
+# for modifying the before-all option depeneding on the image used.
+# Additionally free-threaded builds are not supported as we require
+# support for the limited API.
+skip = ["*-musllinux_*", "*t-*"]
+test-command = "pytest {project}/tests"
+test-sources = ["tests/compressed.bin", "tests/decompressed.bin"]
+test-requires = "pytest"
+
+[tool.cibuildwheel.linux]
+# meson-python uses popen() to execute the ninja build system, so we
+# have to install it using the system package manager.
+before-all = "dnf install ninja-build -y"
+repair-wheel-command = [
+  "auditwheel repair -w {dest_dir} {wheel}",
+  "pipx run abi3audit --strict --report {wheel}",
+]
+
+[tool.cibuildwheel.macos]
+# meson-python uses popen() to execute the ninja build system, so we
+# have to install it using the system package manager.
+before-all = "brew install ninja"
+repair-wheel-command = [
+  "delocate-wheel --require-archs {delocate_archs} -w {dest_dir} -v {wheel}",
+  "pipx run abi3audit --strict --report {wheel}",
+]
