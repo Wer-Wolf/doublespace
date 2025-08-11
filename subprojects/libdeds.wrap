@@ -1,4 +1,4 @@
 [wrap-git]
 url = https://github.com/Wer-Wolf/libdeds.git
-revision = v1.2.0
+revision = v1.2.1
 depth = 1
