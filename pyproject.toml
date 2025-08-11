@@ -10,7 +10,7 @@ keywords = [
     "libdeds"
 ]
 classifiers = [
-    "Development Status :: 2 - Pre-Alpha",
+    "Development Status :: 5 - Production/Stable",
     "Environment :: Other Environment",
     "Intended Audience :: Developers",
     "Operating System :: POSIX",
