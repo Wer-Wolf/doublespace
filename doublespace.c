@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: GPL-2.0-or-later
+
 #define PY_SSIZE_T_CLEAN 1		/* Use Py_ssize_t */
 #include <string.h>
 #include <Python.h>
